@@ -1,0 +1,39 @@
+.UserList {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 30px;
+}
+.UserList .User {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+  background-color: #F3F3F3;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 13px;
+  color: #000000;
+}
+.UserList .User .user_title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13px;
+  color: #A3A3A3;
+  margin-right: 5px;
+}
+.UserList .User .about_user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.UserList .User .about_user .about_user_link {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14px;
+  color: #4B51EF;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=userList.css.map */
