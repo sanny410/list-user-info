@@ -1,7 +1,6 @@
 import React from "react";
 import "./sortUser.scss"
 
-
 function SortUser() {
     return (
         <div className="SortUser">

@@ -1,0 +1,61 @@
+.FormUser {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 15px 200px 0 35px;
+
+  .head_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .btn {
+      height: 35px;
+    }
+  }
+
+  .form_user_for_edit {
+    padding: 20px 15px 20px 12px;
+    border: 1px solid #F3F3F3;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    .FormInput {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      box-sizing: border-box;
+
+      label {
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 9px;
+        color: #000000;
+      }
+
+      input {
+        height: 100%;
+        padding: 5px;
+        border: 1px solid #D8D8D8;
+        border-radius: 5px;
+      }
+
+      .text_area {
+        height: 100px;
+      }
+    }
+  }
+
+  .btn_submit {
+    align-self: flex-end;
+    padding: 5px 15px;
+    color: white;
+    font-size: 16px;
+    background: #52CF4F;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+  }
+}
