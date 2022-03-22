@@ -6,13 +6,13 @@ import FormUser from "../formUser/formUser";
 import "./mainPage.scss"
 
 
-function MainPage() {
+function MainPage({list}) {
 
     return (
         <div className="MainPage">
             <Routes>
-                <Route exact path='/' element={<UserList />}/>
-                <Route path='/formUser' element={<FormUser />} />
+                <Route exact path='/' element={<UserList list={list}/>}/>
+                <Route path={'/formUser/:id'} element={<FormUser list={list}/>} />
             </Routes>
         </div>
     );

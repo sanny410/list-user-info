@@ -42,6 +42,10 @@
         border-radius: 5px;
       }
 
+      input[readonly] {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
       .text_area {
         height: 100px;
       }

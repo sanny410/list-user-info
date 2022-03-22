@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./userList.scss"
 
 
@@ -14,7 +15,7 @@ function User({name, addressCity, companyName, id }) {
                     {companyName}
                 </div>
                 <div>
-                    <a href={`/formUser/${id}`} className={"about_user_link"}>Подробнее</a>
+                    <Link to={`/formUser/${id}`} className={"about_user_link"}>Подробнее</Link>
                 </div>
             </div>
         </div>

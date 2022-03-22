@@ -38,6 +38,9 @@
   border: 1px solid #D8D8D8;
   border-radius: 5px;
 }
+.FormUser .form_user_for_edit .FormInput input[readonly] {
+  color: rgba(0, 0, 0, 0.3);
+}
 .FormUser .form_user_for_edit .FormInput .text_area {
   height: 100px;
 }
