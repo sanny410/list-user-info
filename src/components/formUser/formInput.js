@@ -1,22 +1,26 @@
 import React from "react";
-
+import {useForm} from "react-hook-form";
 import "./formUser.scss"
 
 
-export function FormInput({label, type, value, size, readonly}) {
+export function FormInput({label, type, value, size, readonly, name, register}) {
+
     return (
         <div className="FormInput">
             <label>{label}</label>
-            <input className={"input_form"} type={`${type}`} size={size} defaultValue={`${value}`} readOnly={readonly} required={false}/>
+            <input {...register(name)} className={"input_form"} name={`${name}`} type={`${type}`} size={size} defaultValue={`${value}`} readOnly={readonly} required={true}/>
         </div>
     );
 }
 
-export function FormInputTextArea({label, type, value, size}) {
+export function FormInputTextArea({label, type, value, size, name}) {
+
+    const {register} = useForm();
+
     return (
         <div className="FormInput">
             <label>{label}</label>
-            <input className={"text_area"} type={`${type}`} size={size} defaultValue={`${value}`}/>
+            <input {...register(name)} className={"text_area"} type={`${type}`} size={size} defaultValue={`${value}`} name={`${name}`}/>
         </div>
     );
 }

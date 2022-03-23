@@ -12,19 +12,19 @@
 .FormUser .head_form .btn {
   height: 35px;
 }
-.FormUser .form_user_for_edit {
+.FormUser #form_user_for_edit {
   padding: 20px 15px 20px 12px;
   border: 1px solid #F3F3F3;
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.FormUser .form_user_for_edit .FormInput {
+.FormUser #form_user_for_edit .FormInput {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
   box-sizing: border-box;
 }
-.FormUser .form_user_for_edit .FormInput label {
+.FormUser #form_user_for_edit .FormInput label {
   margin-bottom: 10px;
   font-style: normal;
   font-weight: 400;
@@ -32,16 +32,19 @@
   line-height: 9px;
   color: #000000;
 }
-.FormUser .form_user_for_edit .FormInput input {
+.FormUser #form_user_for_edit .FormInput input {
   height: 100%;
   padding: 5px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
 }
-.FormUser .form_user_for_edit .FormInput input[readonly] {
+.FormUser #form_user_for_edit .FormInput input[readonly] {
   color: rgba(0, 0, 0, 0.3);
 }
-.FormUser .form_user_for_edit .FormInput .text_area {
+.FormUser #form_user_for_edit .FormInput input[required]:invalid {
+  border: 1px solid #D91313;
+}
+.FormUser #form_user_for_edit .FormInput .text_area {
   height: 100px;
 }
 .FormUser .btn_submit {

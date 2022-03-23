@@ -14,7 +14,7 @@
     }
   }
 
-  .form_user_for_edit {
+  #form_user_for_edit {
     padding: 20px 15px 20px 12px;
     border: 1px solid #F3F3F3;
     border-radius: 8px;
@@ -45,6 +45,10 @@
       input[readonly] {
       color: rgba(0, 0, 0, 0.3);
     }
+
+      input[required]:invalid  {
+        border: 1px solid #D91313;
+      }
 
       .text_area {
         height: 100px;

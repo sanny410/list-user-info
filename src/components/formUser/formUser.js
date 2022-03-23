@@ -1,16 +1,22 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
+import {useParams} from "react-router-dom";
+import {useForm} from "react-hook-form";
 import {FormInput, FormInputTextArea} from "./formInput";
 import "./formUser.scss"
-import {useParams} from "react-router-dom";
+
 
 
 function FormUser({list}) {
 
-    const [readonly, setReadonly] = useState(true)
+    const [readonly, setReadonly] = useState(true);
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
+
 
     const { id } = useParams();
     const idUser = Number (id);
-    const user = list.list[idUser];
+    const user = list.list[idUser]
 
     const readOnlyToggle = () => {
         if (readonly === true) {
@@ -20,24 +26,25 @@ function FormUser({list}) {
         }
     }
 
-    return (
+
+        return (
         <div className="FormUser">
             <div className={"head_form"}>
                 <h2>Профиль пользователя</h2>
                 <button className={"btn"} onClick={readOnlyToggle}>Редактировать</button>
             </div>
-            <form className={"form_user_for_edit"}>
-                <FormInput type={"text"} value={user.name} label={"Name"} readonly={readonly}/>
-                <FormInput type={"text"} value={user.name} label={"User name"} readonly={readonly}/>
-                <FormInput type={"email"} value={user.email} label={"E-mail"} readonly={readonly}/>
-                <FormInput type={"text"} value={user.address.street} label={"Street"} readonly={readonly}/>
-                <FormInput type={"text"} value={user.address.city} label={"City"} readonly={readonly}/>
-                <FormInput type={"text"} value={user.address.zipcode} label={"Zip code"} readonly={readonly}/>
-                <FormInput type={"phone"} value={user.phone} label={"Phone"} readonly={readonly}/>
-                <FormInput type={"text"} value={user.website} label={"Website"} readonly={readonly}/>
-                <FormInputTextArea type={"text"} value={""} label={"Comment"}/>
+            <form id={"form_user_for_edit"} onSubmit={handleSubmit(onSubmit)}>
+                <FormInput type={"text"} name={"name"} value={user.name} label={"Name"} readonly={readonly} register={register}/>
+                <FormInput type={"text"} name={"user name"} value={user.name} label={"User name"} readonly={readonly} register={register}/>
+                <FormInput type={"email"} name={"E-mail"} value={user.email} label={"E-mail"} readonly={readonly} register={register}/>
+                <FormInput type={"text"} name={"Street"} value={user.address.street} label={"Street"} readonly={readonly} register={register}/>
+                <FormInput type={"text"} name={"City"} value={user.address.city} label={"City"} readonly={readonly} register={register}/>
+                <FormInput type={"text"} name={"Zip code"} value={user.address.zipcode} label={"Zip code"} readonly={readonly} register={register}/>
+                <FormInput type={"phone"} name={"Phone"} value={user.phone} label={"Phone"} readonly={readonly} register={register}/>
+                <FormInput type={"text"} name={"Website"} value={user.website} label={"Website"} readonly={readonly} register={register}/>
+                <FormInputTextArea name={"Comment"} type={"text"} value={""} label={"Comment"}/>
             </form>
-            <button className={"btn_submit"} type={"submit"}>Отправить</button>
+            <button className={"btn_submit"} type={"submit"} form={"form_user_for_edit"}>Отправить</button>
         </div>
     );
 }
