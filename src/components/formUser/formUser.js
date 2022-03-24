@@ -11,7 +11,7 @@ function FormUser({list}) {
     const [readonly, setReadonly] = useState(true);
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => console.log(JSON.stringify(data));
 
 
     const { id } = useParams();
